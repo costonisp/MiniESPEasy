@@ -68,7 +68,18 @@ boolean Plugin_099(byte function, struct EventStruct *event, String& string)
          {
            string += F("<input type=checkbox name=plugin_099_pirDelayActive>");
          }
-        success = true;
+        string += F("<TR><TD>Debug led active:<TD>");
+        if (Settings.TaskDevicePluginConfig[event->TaskIndex][4])
+        {
+          char tmpString[80];
+          string += F("<input type=checkbox name=plugin_099_debugLedActive checked>");
+          sprintf(tmpString, "<TR><TD>Off Delay:<TD><input type='text' name='plugin_099_debugLedPin' value='%u'>", Settings.TaskDevicePluginConfig[event->TaskIndex][5]);
+          string += tmpString;
+        }else
+         {
+           string += F("<input type=checkbox name=plugin_099_debugLedActive>");
+         }
+         success = true;
         break;
       }
 
@@ -84,7 +95,11 @@ boolean Plugin_099(byte function, struct EventStruct *event, String& string)
         String pirDelayActive = WebServer.arg("plugin_099_pirDelayActive");
         String offDelay = WebServer.arg("plugin_099_offDelay");
         Settings.TaskDevicePluginConfig[event->TaskIndex][2] = (pirDelayActive == "on");
-        Settings.TaskDevicePluginConfig[event->TaskIndex][3] = offDelay.toInt();  
+        Settings.TaskDevicePluginConfig[event->TaskIndex][3] = offDelay.toInt(); 
+        String debugLedActive = WebServer.arg("plugin_099_debugLedActive");
+        String debugLedPin = WebServer.arg("plugin_099_debugLedPin");
+        Settings.TaskDevicePluginConfig[event->TaskIndex][4] = (debugLedActive == "on");
+        Settings.TaskDevicePluginConfig[event->TaskIndex][5] = debugLedPin.toInt();  
         success = true;
         break;
       }
@@ -116,6 +131,13 @@ boolean Plugin_099(byte function, struct EventStruct *event, String& string)
           pirState[event->TaskIndex] = pState;
           UserVar[event->BaseVarIndex] = pState; 
           
+          // Turn on led when pir is high
+          if(Settings.TaskDevicePluginConfig[event->TaskIndex][4])
+            {
+              pinMode(Settings.TaskDevicePluginConfig[event->TaskIndex][5], OUTPUT);
+              digitalWrite(Settings.TaskDevicePluginConfig[event->TaskIndex][5], pState);
+            }
+            
           if ((pState == 1) && (Settings.TaskDevicePluginConfig[event->TaskIndex][0] == 2))
             {
               SensorType = SENSOR_TYPE_DIMMER;
