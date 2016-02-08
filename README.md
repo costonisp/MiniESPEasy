@@ -1,11 +1,16 @@
-# ESPEasy
-Easy MultiSensor device based on ESP8266
+MiniESPEasy = ESPEasy for modules with small number of I/O pins
 
-This is where development takes place. Beware that latest versions may be unstable.
+This is a fork of stable ESPEasy-R78 release.
+All credit for this program goes to the writer of ESPEasy Martinus (mvdbro)
+Also credits go to martinayotte from the esp8266.com forum who attended me to the existence of the Serial.swap() command.
 
-Stable versions including libraries are currently on SoureForge:
+My work was only to add a few Serial.swap() commands, slightly change the Hardware page of the webGui so that GPIO-13&15 are replaced by GPIO-1&3, reordering the pin_list and adding GPIO-1&3 in the I2C selection menu.
 
-http://sourceforge.net/projects/espeasy/
+For documentation of the program look at the documentation of ESPEasy
+
+If you are using (Mini)ESPEasy for the first time, follow the instructions for installing ESPEasy on http://www.esp8266.nu/index.php/Main_Page. After installing the libraries use the Arduino IDE to compile the MiniESPEasy sourcecode and flash your ESP8266.
+
 
 Wiki: http://www.esp8266.nu
 Forum: http://www.esp8266.nu/forum
+
