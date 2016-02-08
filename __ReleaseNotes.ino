@@ -1,3 +1,15 @@
+// MiniESP R78 08-02-2016
+// -----------
+// In ESPEasy.ina: Swap Rxd/Txd with GPIO-13/GPIO-15 to free GPIO-1 & GPIO-3
+// Added 2 Serial.swap() commands just before the Serial.begin(115200 & Serial.begin(Settings.Baudrate).
+// -----------
+// In Misc.ino:  Added Serial.swap() just before Serial.begin(115200)
+// -----------
+// In Webserver.ino: Changed Web Interface hardware page to enable pin 1/3
+// pin_1 & pin_3 are added and pin_13 & pin_15 are removed from the Pin list and I2C menu
+// -----------
+// In _P023_OLED.ino: changed 2 bytes so it will work fine with SH1106 controllers
+
 // R78 06-02-2016
 // Bugfix for PCF8574 plugin, could not address PCF8574A chip types
 
