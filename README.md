@@ -1,4 +1,6 @@
-MiniESPEasy = ESPEasy for modules with small number of I/O pins
+MiniESP(Easy) = ESPEasy for modules with small number of I/O pins
+
+Using this fork of ESPEasy you can use the Rxd and Txd pins on small modules like ESP-01, ESP-02 and several commercial WiFi-gadgeds with limited I/O pin numbers for general use and also for I2C use. 
 
 This is a fork of stable ESPEasy-R78 release.
 All credit for this program goes to the writer of ESPEasy Martinus (mvdbro)
