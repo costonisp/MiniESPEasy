@@ -629,6 +629,7 @@ void ResetFactory(void)
 void emergencyReset()
 {
   // Direct Serial is allowed here, since this is only an emergency task.
+  Serial.swap();
   Serial.begin(115200);
   Serial.write(0xAA);
   Serial.write(0x55);
