@@ -9,9 +9,11 @@ If you are using (Mini)ESPEasy for the first time, follow the instructions for i
 
 
 Wiki: http://www.esp8266.nu
+
 Forum: http://www.esp8266.nu/forum
 
 p.s.
+
 All credit for this program goes to the writer of ESPEasy Martinus (mvdbro).
 Also credits go to martinayotte from the esp8266.com forum who attended me to the existence of the Serial.swap() command.
 
