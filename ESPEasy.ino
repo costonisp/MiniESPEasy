@@ -356,6 +356,7 @@ boolean wifiSetupConnect = false;
 \*********************************************************************************************/
 void setup()
 {
+  Serial.swap();
   Serial.begin(115200);
 
   if (SpiffsSectors() == 0)
@@ -397,6 +398,7 @@ void setup()
 
   if (systemOK)
   {
+    Serial.swap();
     Serial.begin(Settings.BaudRate);
 
     if (Settings.Build != BUILD)
