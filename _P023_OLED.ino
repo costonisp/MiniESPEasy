@@ -374,7 +374,7 @@ static void Plugin_023_clear_display(void)
   {
     Plugin_023_setXY(k, 0);
     {
-      for (i = 0; i < 128; i++) //clear all COL
+      for (i = 0; i < 132; i++) //clear all COL
       {
         Plugin_023_SendChar(0);         //clear all COL
       }
@@ -421,7 +421,7 @@ static void Plugin_023_sendcommand(unsigned char com)
 static void Plugin_023_setXY(unsigned char row, unsigned char col)
 {
   Plugin_023_sendcommand(0xb0 + row);              //set page address
-  Plugin_023_sendcommand(0x00 + (8 * col & 0x0f)); //set low col address
+  Plugin_023_sendcommand(0x02 + (8 * col & 0x0f)); //set low col address
   Plugin_023_sendcommand(0x10 + ((8 * col >> 4) & 0x0f)); //set high col address
 }
 
