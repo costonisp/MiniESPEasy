@@ -8,7 +8,7 @@ My work was only to add a few Serial.swap() commands, slightly change the Hardwa
 
 For documentation of the program look at the documentation of ESPEasy
 
-If you are using (Mini)ESPEasy for the first time, follow the instructions for installing ESPEasy on http://www.esp8266.nu/index.php/Main_Page. After installing the libraries use the Arduino IDE to compile the MiniESPEasy sourcecode and flash your ESP8266.
+If you are using (Mini)ESPEasy for the first time, follow the instructions for installing ESPEasy on http://www.esp8266.nu/index.php/Main_Page. After installing the libraries use the Arduino IDE to compile the MiniESP sourcecode and flash your ESP8266.
 
 
 Wiki: http://www.esp8266.nu
