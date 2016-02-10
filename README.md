@@ -15,7 +15,7 @@ Forum: http://www.esp8266.nu/forum
 p.s.
 
 All credit for this program goes to the writer of ESPEasy Martinus (mvdbro).
-Also credits go to martinayotte from the esp8266.com forum who attended me to the existence of the Serial.swap() command.
+Also credits go to martinayotte from the esp8266.com forum who alerted me to the existence of the Serial.swap() command.
 
 My work was only to add a few Serial.swap() commands, slightly change the Hardware page of the webGui so that GPIO-13&15 are replaced by GPIO-1&3, reordering the pin_list and adding GPIO-1&3 in the I2C selection menu.
 I also changed 2 bytes in the OLED module so that displays with SH1106 & SSD1366 controllers will be supported.
