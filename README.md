@@ -1,3 +1,6 @@
+MiniESPEasy is retired now because the functionality of enabling GPIO 1&3 is included in the beta versions of ESPEasy.
+----------------------------------------------------------------------------------------------------------------------
+
 MiniESPEasy = ESPEasy for modules with small number of available I/O pins
 
 This is a fork of stable ESPEasy-R78 release.
